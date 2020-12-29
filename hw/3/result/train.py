@@ -12,7 +12,7 @@ from generate import *
 
 # Parse command line arguments
 argparser = argparse.ArgumentParser()
-argparser.add_argument('--filename', type=str, default="shakespeare_train.txt")
+argparser.add_argument('--filename', type=str, default="../dataset_Shakespeare/shakespeare_train.txt")
 argparser.add_argument('--model', type=str, default="rnn")
 argparser.add_argument('--n_epochs', type=int, default=500)
 argparser.add_argument('--print_every', type=int, default=400)
@@ -28,7 +28,7 @@ args = argparser.parse_args()
 
 
 file, file_len = read_file(args.filename)
-val_file, val_file_len = read_file('shakespeare_valid.txt')
+val_file, val_file_len = read_file('../dataset_Shakespeare/shakespeare_valid.txt')
 
 
 def random_training_set(chunk_len, batch_size):
